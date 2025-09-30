@@ -1,0 +1,45 @@
+.fruit-card {
+  background: #ffffffcc; /* slightly transparent white */
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fruit-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.fruit-card h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.fruit-card p {
+  color: #555;
+  font-weight: bold;
+}
+
+.fruit-card button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.fruit-card button:hover {
+  background-color: #219150;
+}
+
+.fruit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
