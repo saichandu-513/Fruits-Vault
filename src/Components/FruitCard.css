@@ -1,45 +1,58 @@
 .fruit-card {
-  background: #ffffffcc; /* slightly transparent white */
-  border-radius: 15px;
-  padding: 15px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 200px;                /* fixed width for uniformity */
+  display: flex;
+  flex-direction: column;      /* stack image, name, price, button */
+  align-items: center;         /* center all items horizontally */
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.fruit-card img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.fruit-card h3 {
-  margin: 10px 0;
-  color: #333;
-}
-
-.fruit-card p {
-  color: #555;
-  font-weight: bold;
-}
-
-.fruit-card button {
-  background-color: #27ae60;
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 10px;
-  font-weight: 500;
-}
-
-.fruit-card button:hover {
-  background-color: #219150;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
 }
 
 .fruit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+  transform: scale(1.05);
+}
+
+/* Fruit image */
+.fruit-card img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 0.8rem;
+  border-radius: 8px;
+}
+
+/* Fruit name */
+.fruit-card h3 {
+  margin: 0.5rem 0 0.3rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Fruit price */
+.fruit-card p {
+  margin: 0.3rem 0 0.8rem 0;
+  font-weight: bold;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Add to cart button */
+.fruit-card button {
+  margin-top: auto;              /* push button to bottom if card height grows */
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;                  /* button full width for neat alignment */
+  font-weight: bold;
+}
+
+.fruit-card button:hover {
+  background-color: #218838;
 }

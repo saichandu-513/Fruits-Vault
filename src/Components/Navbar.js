@@ -3,27 +3,18 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const sections = [
-    { name: "Profile", path: "/profile" },
-    { name: "Cart", path: "/cart" },
-    { name: "Account", path: "/account" },
-    { name: "Orders", path: "/orders" },
-    { name: "Help Center", path: "/help" },
-    { name: "Wishlist", path: "/wishlist" },
-    { name: "Search", path: "/search" },
-    { name: "Logout", path: "/logout" },
-    { name: "Coupons", path: "/coupons" },
-  ];
-
   return (
     <nav className="navbar">
-      <div className="navbar-logo">Fruits Vault</div>
-      <ul className="navbar-menu">
-        {sections.map((item, index) => (
-          <li key={index}>
-            <Link to={item.path}>{item.name}</Link>
-          </li>
-        ))}
+      <ul>
+        <li><Link to="/profile">Profile</Link></li>
+        <li><Link to="/cart">Cart</Link></li>
+        <li><Link to="/account">Account</Link></li>
+        <li><Link to="/orders">Orders</Link></li>
+        <li><Link to="/help">Help Center</Link></li>
+        <li><Link to="/wishlist">Wishlist</Link></li>
+        <li><Link to="/search">Search</Link></li>
+        <li><Link to="/logout">Logout</Link></li>
+        <li><Link to="/coupons">Coupons</Link></li>
       </ul>
     </nav>
   );
