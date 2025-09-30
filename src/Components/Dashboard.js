@@ -6,14 +6,14 @@ import "./Dashboard.css";
 const Dashboard = () => {
   const [cart, setCart] = useState([]);
 
- const fruitsData = [
-  { name: "Apple", price: 2, image: "/images/apple.jpg" },
-  { name: "Banana", price: 1, image: "/images/banana.jpg" },
-  { name: "Orange", price: 1.5, image: "/images/orange.jpg" },
-  { name: "Mango", price: 3, image: "/images/mango.jpg" },
-  { name: "Pineapple", price: 2.5, image: "/images/pineapple.jpg" },
-  { name: "Grapes", price: 2.2, image: "/images/grapes.jpg" },
-];
+  const fruitsData = [
+    { name: "Apple", price: 2, image: "/images/apple.jpg" },
+    { name: "Banana", price: 1, image: "/images/banana.jpg" },
+    { name: "Orange", price: 1.5, image: "/images/orange.jpg" },
+    { name: "Mango", price: 3, image: "/images/mango.jpg" },
+    { name: "Pineapple", price: 2.5, image: "/images/pineapple.jpg" },
+    { name: "Grapes", price: 2.2, image: "/images/grapes.jpg" },
+  ];
 
   const addToCart = (fruit) => {
     setCart([...cart, fruit]);

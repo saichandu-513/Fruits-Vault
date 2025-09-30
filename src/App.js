@@ -1,17 +1,17 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
-import LandingPage from "./components/LandingPage";
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
-import Profile from "./components/Profile";
-import Cart from "./components/Cart";
-import Account from "./components/Account";
-import Orders from "./components/Orders";
-import Help from "./components/Help";
-import Wishlist from "./components/Wishlist";
-import Search from "./components/Search";
-import Logout from "./components/Logout";
-import Coupons from "./components/Coupons";
+import Dashboard from "./Components/Dashboard";
+import LandingPage from "./Components/LandingPage";
+import SignIn from "./Components/SignIn";
+import SignUp from "./Components/SignUp";
+import Profile from "./Components/Profile";
+import Cart from "./Components/Cart";
+import Account from "./Components/Account";
+import Orders from "./Components/Orders";
+import Help from "./Components/Help";
+import Wishlist from "./Components/Wishlist";
+import Search from "./Components/Search";
+import Logout from "./Components/Logout";
+import Coupons from "./Components/Coupons";
 
 function App() {
   return (
