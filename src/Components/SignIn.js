@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SignUp.css';
 import logoImage from '../images/logo1.png';
-import backgroundImage from '../images/Backgroung1.png';
+import backgroundImage from '../images/Background1.png';
 import { Link } from 'react-router-dom';
 
 function SignIn() {
