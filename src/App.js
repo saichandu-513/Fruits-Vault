@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Dashboard from "./Components/Dashboard";
 import LandingPage from "./Components/LandingPage";
+import Dashboard from "./Components/Dashboard";
 import SignIn from "./Components/SignIn";
 import SignUp from "./Components/SignUp";
 import Profile from "./Components/Profile";
@@ -17,9 +17,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/dashboard" />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<Navigate to="/Dashbaord" />} />
+
         <Route path="/landing" element={<LandingPage />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />

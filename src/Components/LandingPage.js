@@ -15,7 +15,9 @@ function LandingPage() {
         <img src="/images/logo1.png" alt="Fruit Basket" />
         <div className="top-actions">
           <Link to="/signin" className="btn btn-rounded">Sign in</Link>
+          
           <Link to="/signup" className="btn btn-rounded">Sign up</Link>
+           <Link to="/dashboard" className="btn btn-rounded">dashboard</Link>
         </div>
       </div>
       <div className="showcase-content">
