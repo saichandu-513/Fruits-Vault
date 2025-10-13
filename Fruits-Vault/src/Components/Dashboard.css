@@ -1,0 +1,119 @@
+/* Full-screen dashboard container */
+.dashboard {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f8ff; /* Light background */
+}
+
+/* Main content container */
+.dashboard-home {
+  flex: 1;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Page title */
+.dashboard-home h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Grid with exactly 3 fruits per row */
+.fruits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 1.5rem;                          /* spacing between cards */
+  width: 100%;
+  justify-items: center;                /* center cards horizontally */
+}
+
+/* Ensure each card is centered in its column */
+.fruits-grid > * {
+  display: flex;
+  justify-content: center;
+}
+
+/* Media query for smaller laptops */
+@media (max-width: 1024px) {
+  .fruits-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller laptops */
+    gap: 1rem;
+  }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .fruits-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    gap: 0.8rem;
+  }
+}
+/* Fruit card container - square shape */
+.fruit-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  height: 220px; /* Make card square */
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.1);
+  justify-content: space-between; /* To space items vertically in card */
+}
+/* Make fruit card bigger and square */
+.fruit-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 380px;    /* Increased width */
+  height: 380px;   /* Increased height for bigger square */
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+}
+
+/* Adjust fruit image size accordingly */
+.fruit-card img {
+  width: 240px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+/* Reduce gap between grid items */
+.fruits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; /* Reduced gap spacing */
+  width: 100%;
+  justify-items: center;
+}
+
+/* Media queries remain unchanged */
+/* Media query for smaller laptops */
+@media (max-width: 1024px) {
+  .fruits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .fruits-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}

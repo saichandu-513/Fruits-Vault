@@ -1,0 +1,173 @@
+/* Body and HTML with animated background glow on hover */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(120deg, #d0f0c0 0%, #6ab04c 100%);
+  color: #252625;
+  transition: box-shadow 0.6s ease-in-out;
+}
+
+body:hover, html:hover {
+  animation: glowBackground 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowBackground {
+  0% {
+    box-shadow: inset 0 0 15px 5px #9ace70;
+  }
+  100% {
+    box-shadow: inset 0 0 45px 20px #d3f59a;
+  }
+}
+
+.help-center-wrapper {
+  padding: 60px 40px;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.help-center-container {
+  width: 100%;
+  max-width: none;
+}
+
+.help-center-container h1 {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 800;
+  color: #1c1d1a;
+}
+
+.website-info {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  padding: 0 10px;
+  font-weight: 600;
+}
+
+/* Glowing text for Email and Phone */
+.contact-info {
+  font-size: 1.75rem;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  font-weight: 700;
+}
+
+.glow-text {
+  color: #242424;
+  text-shadow:
+    0 0 5px #a3f78d,
+    0 0 10px #7aff84,
+    0 0 20px #65f466,
+    0 0 30px #4caf50,
+    0 0 40px #4caf50;
+  animation: textGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow:
+      0 0 5px #a3f78d,
+      0 0 10px #7aff84,
+      0 0 20px #6c926c,
+      0 0 30px #4caf50,
+      0 0 40px #4caf50;
+  }
+  100% {
+    text-shadow:
+      0 0 10px #bdfb9b,
+      0 0 20px #679667,
+      0 0 30px #7efc72,
+      0 0 40px #5ffe4b,
+      0 0 60px #5d9057;
+  }
+}
+
+.help-form label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 25px;
+  margin-bottom: 6px;
+}
+
+.help-form input,
+.help-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 2px solid #94c973;
+  border-radius: 4px;
+  outline-offset: 2px;
+  outline-color: transparent;
+  font-family: inherit;
+  transition: border-color 0.25s ease;
+  box-sizing: border-box;
+}
+
+.help-form input:focus,
+.help-form textarea:focus {
+  border-color: #2d7e12;
+  outline-color: #a2d149;
+  background-color: #f7fff0;
+}
+
+.help-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.help-form button {
+  margin-top: 33px;
+  width: 100%;
+  padding: 16px 0;
+  background: #2d7e12;
+  color: #f8fff4;
+  font-weight: 900;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  box-shadow: 0 5px 8px rgba(45, 126, 18, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.help-form button:hover {
+  background: #1a4f05;
+  box-shadow: 0 6px 15px rgba(26, 79, 5, 0.65);
+}
+
+.response-message {
+  margin-top: 28px;
+  text-align: center;
+  font-style: italic;
+  color: #124400;
+  font-size: 1.1rem;
+}
+
+.terms-conditions {
+  margin-top: 60px;
+  padding: 20px 12px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1rem;
+  line-height: 1.55;
+  font-weight: 500;
+  color: #2a2c29;
+  border-top: 3px solid #9aca6a;
+}
+
+.terms-conditions h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #12150d;
+}
