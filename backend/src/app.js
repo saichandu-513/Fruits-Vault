@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
+const path = require("path");
+const fs = require("fs");
 
 const db = require("./db");
 const authRouter = require("./routes/auth");
@@ -14,6 +16,21 @@ app.use(morgan("dev"));
 
 app.use("/api/auth", authRouter);
 app.use("/api/orders", ordersRouter);
+
+// Single-origin production setup:
+// If a React build exists, serve it from the backend so the browser uses one base URL.
+// This avoids cross-origin / proxy issues on different OS/devices.
+const frontendBuildDir = path.join(__dirname, "..", "..", "frontend", "build");
+const frontendIndexHtml = path.join(frontendBuildDir, "index.html");
+
+if (fs.existsSync(frontendIndexHtml)) {
+  app.use(express.static(frontendBuildDir));
+
+  // SPA fallback: any non-API route should load index.html
+  app.get(/^(?!\/api\/).*/, (req, res) => {
+    res.sendFile(frontendIndexHtml);
+  });
+}
 
 const fruits = [
   { id: "apple", name: "Apple", price: 2, image: "/images/apple.jpg" },

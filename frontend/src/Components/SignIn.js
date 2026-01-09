@@ -60,7 +60,9 @@ function SignIn() {
           data?.error ||
           (isProxyError
             ? 'Backend is not running on http://localhost:5000. Start it and try again.'
-            : `Login failed (${res.status})`);
+            : res.status === 403
+              ? `Login blocked (403). This usually means the request is going to the wrong server (frontend host) instead of the backend. Response URL: ${res.url}`
+              : `Login failed (${res.status})`);
         setStatus({ type: 'error', message });
         return;
       }
