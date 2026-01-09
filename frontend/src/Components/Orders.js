@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import { useAuth } from "../auth/AuthContext";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { apiUrl } from "../api";
 
 const Orders = () => {
   const { token } = useAuth();
@@ -38,7 +39,7 @@ const Orders = () => {
       setLoading(true);
 
       try {
-        const res = await fetch("/api/orders", {
+          const res = await fetch(apiUrl("/api/orders"), {
           headers: {
             Authorization: `Bearer ${token}`
           }

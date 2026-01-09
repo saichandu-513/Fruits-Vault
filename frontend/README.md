@@ -11,6 +11,20 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+## Public deployment (important)
+
+In development, this app uses CRA's `proxy` (see `frontend/package.json`) so requests like `/api/auth/login` are forwarded to `http://localhost:5000`.
+
+In production (public website), **there is no dev proxy**, so you must set the backend URL:
+
+- Set `REACT_APP_API_BASE_URL` to your backend origin (example: `https://your-backend.example.com`).
+- Rebuild the frontend.
+
+Example (PowerShell):
+
+- `$env:REACT_APP_API_BASE_URL = "https://your-backend.example.com"`
+- `npm run build`
+
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 

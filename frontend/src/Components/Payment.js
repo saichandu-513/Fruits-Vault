@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Layout from "./Layout";
 import { useCart } from "../cart/CartContext";
 import { useAuth } from "../auth/AuthContext";
+import { apiUrl } from "../api";
 
 const METHODS = [
   { id: "cod", title: "Cash on Delivery", subtitle: "Pay when you receive" },
@@ -44,7 +45,7 @@ export default function Payment() {
 
     try {
       setSubmitting(true);
-      const res = await fetch("/api/orders", {
+      const res = await fetch(apiUrl("/api/orders"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

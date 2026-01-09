@@ -59,6 +59,12 @@ router.post("/signup", async (req, res) => {
       detail: err?.detail
     });
 
+    if (err?.code === "PG_NOT_CONFIGURED") {
+      return res.status(500).json({
+        error: "PostgreSQL is not configured. Set DATABASE_URL (or PGHOST/PGUSER/PGDATABASE) and restart the backend."
+      });
+    }
+
     if (err?.code === "23505") {
       return res.status(409).json({ error: "Email already exists" });
     }
@@ -116,6 +122,12 @@ router.post("/login", async (req, res) => {
       message: err?.message,
       detail: err?.detail
     });
+
+    if (err?.code === "PG_NOT_CONFIGURED") {
+      return res.status(500).json({
+        error: "PostgreSQL is not configured. Set DATABASE_URL (or PGHOST/PGUSER/PGDATABASE) and restart the backend."
+      });
+    }
     return res.status(500).json({ error: "Failed to login" });
   }
 });

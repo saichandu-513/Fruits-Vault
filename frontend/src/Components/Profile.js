@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import Layout from "./Layout";
 import { useAuth } from "../auth/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { apiUrl } from "../api";
 
 const Profile = () => {
   const { user, token, updateUser } = useAuth();
@@ -28,7 +29,7 @@ const Profile = () => {
     setError("");
     try {
       setSaving(true);
-      const res = await fetch("/api/auth/me", {
+      const res = await fetch(apiUrl("/api/auth/me"), {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

@@ -5,6 +5,7 @@ import backgroundImage from '../images/fruits.jpg';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
 import Footer from './Footer';
+import { apiUrl } from '../api';
 
 function SignIn() {
   const navigate = useNavigate();
@@ -40,15 +41,27 @@ function SignIn() {
     setSubmitting(true);
 
     try {
-      const res = await fetch('/api/auth/login', {
+      const res = await fetch(apiUrl('/api/auth/login'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: form.email, password: form.password })
       });
-      const data = await res.json().catch(() => ({}));
+
+      const contentType = res.headers.get('content-type') || '';
+      const data = await (contentType.includes('application/json')
+        ? res.json().catch(() => ({}))
+        : res.text().then((text) => ({ raw: text })).catch(() => ({}))
+      );
 
       if (!res.ok) {
-        setStatus({ type: 'error', message: data?.error || 'Login failed' });
+        const raw = typeof data?.raw === 'string' ? data.raw : '';
+        const isProxyError = raw.includes('Could not proxy request') || raw.includes('ECONNREFUSED');
+        const message =
+          data?.error ||
+          (isProxyError
+            ? 'Backend is not running on http://localhost:5000. Start it and try again.'
+            : `Login failed (${res.status})`);
+        setStatus({ type: 'error', message });
         return;
       }
 

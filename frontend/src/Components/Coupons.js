@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { apiUrl } from "../api";
 import Layout from "./Layout";
 import { useCart } from "../cart/CartContext";
 
@@ -12,7 +13,7 @@ const Coupons = () => {
     async function load() {
       setError("");
       try {
-        const res = await fetch("/api/coupons");
+        const res = await fetch(apiUrl("/api/coupons"));
         const data = await res.json().catch(() => []);
         if (!res.ok) {
           throw new Error("Failed to load coupons");

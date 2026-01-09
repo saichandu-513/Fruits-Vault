@@ -4,6 +4,7 @@ import './Auth.css';
 import logoImage from '../images/logo1.png';
 import backgroundImage from '../images/fruits.jpg';
 import Footer from './Footer';
+import { apiUrl } from '../api';
 
 function SignUp() {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ function SignUp() {
     setSubmitting(true);
 
     try {
-      const res = await fetch('/api/auth/signup', {
+      const res = await fetch(apiUrl('/api/auth/signup'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -55,10 +56,21 @@ function SignUp() {
         })
       });
 
-      const data = await res.json().catch(() => ({}));
+      const contentType = res.headers.get('content-type') || '';
+      const data = await (contentType.includes('application/json')
+        ? res.json().catch(() => ({}))
+        : res.text().then((text) => ({ raw: text })).catch(() => ({}))
+      );
 
       if (!res.ok) {
-        setStatus({ type: 'error', message: data?.error || 'Signup failed' });
+        const raw = typeof data?.raw === 'string' ? data.raw : '';
+        const isProxyError = raw.includes('Could not proxy request') || raw.includes('ECONNREFUSED');
+        const message =
+          data?.error ||
+          (isProxyError
+            ? 'Backend is not running on http://localhost:5000. Start it and try again.'
+            : `Signup failed (${res.status})`);
+        setStatus({ type: 'error', message });
         return;
       }
 
