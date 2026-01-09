@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import './LandingPage.css';
 import logoImage from '../images/logo1.png';
 import Footer from './Footer';
+import backgroundImage from '../images/fruits.jpg';
 
 function LandingPage() {
   return (
-    <header className="landing-page showcase" style={{ height: '100vh' }}>
+    <header className="landing-page showcase" style={{ height: '100vh', '--landing-bg-image': `url(${backgroundImage})` }}>
       <div className="showcase-top">
         {<img src={logoImage} alt="Fruit Basket" />}
         <div className="top-actions">
