@@ -4,8 +4,11 @@
   "private": true,
   "scripts": {
     "frontend": "cross-env PORT=3000 npm --prefix frontend start",
+    "frontend:lan": "cross-env HOST=0.0.0.0 PORT=3000 npm --prefix frontend start",
     "backend": "cross-env PORT=5000 npm --prefix backend run dev",
+    "backend:lan": "cross-env HOST=0.0.0.0 PORT=5000 npm --prefix backend run dev",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "dev:lan": "concurrently \"npm run backend:lan\" \"npm run frontend:lan\"",
     "build": "npm --prefix frontend run build",
     "test": "npm --prefix frontend test",
     "backend:start": "npm --prefix backend start",

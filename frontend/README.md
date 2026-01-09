@@ -25,6 +25,22 @@ Example (PowerShell):
 - `$env:REACT_APP_API_BASE_URL = "https://your-backend.example.com"`
 - `npm run build`
 
+## Open from a Mac / other device (LAN dev)
+
+If you run the app on Windows and try to open it from a Mac, **do not use `localhost` on the Mac**.
+`localhost` always means "this same machine", so the Mac will try to call its own `localhost:5000`.
+
+On Windows:
+
+- Start both servers on all interfaces: `npm run dev:lan`
+- Find your Windows IP address (example: `192.168.1.10`)
+
+On the Mac:
+
+- Open: `http://<windows-ip>:3000`
+
+If you are using `REACT_APP_API_BASE_URL`, set it to the Windows IP (example: `http://192.168.1.10:5000`) before building/running the frontend.
+
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
