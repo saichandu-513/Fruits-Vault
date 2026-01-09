@@ -1,0 +1,50 @@
+.help-wrap {
+  padding: 1.25rem 1.25rem;
+}
+
+.help-title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.help-subtext {
+  margin: 0.6rem 0 1.1rem;
+  color: var(--fb-text-muted);
+}
+
+.help-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.help-actionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: var(--fb-radius-sm);
+  border: 1px solid rgba(38, 50, 56, 0.10);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.help-actionLabel {
+  color: var(--fb-text-muted);
+  font-weight: 700;
+}
+
+.help-link {
+  color: #0b2a14;
+  text-decoration: underline;
+}
+
+.help-link:hover {
+  opacity: 0.9;
+}
+
+.help-meta {
+  margin-top: 1.1rem;
+  color: var(--fb-text-muted);
+}

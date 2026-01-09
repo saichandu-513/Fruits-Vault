@@ -1,0 +1,48 @@
+.logout-overlay {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.logout-card {
+  width: min(520px, 100%);
+  background: var(--fb-surface);
+  color: var(--fb-card-text);
+  border-radius: var(--fb-radius);
+  box-shadow: var(--fb-shadow);
+  padding: 22px;
+}
+
+.logout-muted {
+  color: var(--fb-text-muted);
+  margin-top: 4px;
+}
+
+.logout-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+/* The global .fb-btn-secondary is tuned for dark backgrounds.
+   In the logout dialog we render on a light card, so override for contrast. */
+.logout-card .fb-btn-secondary {
+  background: transparent;
+  color: var(--fb-card-text);
+  border: 1px solid rgba(38, 50, 56, 0.28);
+  box-shadow: none;
+}
+
+.logout-card .fb-btn-secondary:hover {
+  background: rgba(38, 50, 56, 0.06);
+}
+
+.logout-card .fb-btn-secondary:disabled {
+  opacity: 0.65;
+}
+  

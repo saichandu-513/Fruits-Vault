@@ -1,0 +1,19 @@
+{
+  "name": "fruits-vault",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "frontend": "cross-env PORT=3000 npm --prefix frontend start",
+    "backend": "cross-env PORT=5000 npm --prefix backend run dev",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "build": "npm --prefix frontend run build",
+    "test": "npm --prefix frontend test",
+    "backend:start": "npm --prefix backend start",
+    "backend:smoke": "npm --prefix backend run smoke",
+    "install:all": "npm --prefix frontend install && npm --prefix backend install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3"
+  }
+}
