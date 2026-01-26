@@ -9,14 +9,14 @@ function LandingPage() {
   return (
     <header className="landing-page showcase" style={{ height: '100vh', '--landing-bg-image': `url(${backgroundImage})` }}>
       <div className="showcase-top">
-        {<img src={logoImage} alt="Fruit Basket" />}
+        {/* Logo removed as requested */}
         <div className="top-actions">
           <Link to="/signin" className="btn btn-rounded">Sign in</Link>
           <Link to="/signup" className="btn btn-rounded">Sign up</Link>
         </div>
       </div>
       <div className="showcase-content">
-        <h1>Fruit Vault !</h1>
+        <h1>Fruit Vault</h1>
         <p>Shop for your favorite fruits</p>
         <Link to="/dashboard" className="btn btn-xl">
           Shop Now &gt; <i className="fas fa-chevron-right btn-icon"></i>
