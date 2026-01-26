@@ -7,6 +7,7 @@ const fs = require("fs");
 const db = require("./db");
 const authRouter = require("./routes/auth");
 const ordersRouter = require("./routes/orders");
+const forgotPasswordRouter = require("./routes/forgotPassword");
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(morgan("dev"));
 
 app.use("/api/auth", authRouter);
 app.use("/api/orders", ordersRouter);
+app.use("/api/auth", forgotPasswordRouter);
 
 // Single-origin production setup:
 // If a React build exists, serve it from the backend so the browser uses one base URL.
